@@ -76,6 +76,11 @@ span.picture {
     margin: 10px;
 }
 
+.likes {
+    position: relative;
+    top: -10px;
+}
+
 input, textarea, select, .uneditable-input {
     border: 1px solid #d2d2d2;
     border-radius: 5px;
