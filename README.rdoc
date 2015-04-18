@@ -20,3 +20,20 @@ email: string
 - email must be present
 - email must be unique
 - email be valid
+
+
+Chefs:
+
+What we have already:
+- model and validations
+- database table with columns chefname and email
+
+What we need to add:
+- passwords to the chefs table so chefs can be authenticated and logged in
+- use email as login credential, since email is unique
+- ability to register new chefs
+- ability to display chefs' profiles
+- ability to list chefs
+- ability to chefs to log in and out
+- restrict actions like create/edit recipe and like system to chefs who are logged in
+- restrict edit of recipes to chefs who created them
