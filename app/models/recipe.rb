@@ -7,6 +7,7 @@ class Recipe < ActiveRecord::Base
     validates :summary, presence: true, length: { minimum: 10, maximum: 150 }
     validates :description, presence: true, length: { minimum: 20, maximum: 500 }
     mount_uploader :picture, PictureUploader
+    default_scope -> { order(updated_at: :desc) }
     
     validate :picture_size
     
