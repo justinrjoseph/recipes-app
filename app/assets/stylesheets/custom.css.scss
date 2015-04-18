@@ -22,6 +22,14 @@ body {
     margin: 10px 10px 10px 25px;
 }
 
+#main-nav-collapse .navbar-nav .nav-item a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: rgb(250, 190, 78);
+}
+
 h1, h2, h3, h4 {
     line-height: 1;
 }
@@ -39,14 +47,9 @@ h1 {
 h2 {
     font-size: 1.2em;
     font-weight: normal;
-    color: #777;
-}
+    color: #777;}
 
 .alert {
-    margin-top: 10px;
-}
-
-.chef_info {
     margin-top: 10px;
 }
 
@@ -54,8 +57,23 @@ h2 {
     background: #ededed;  
 }
 
+.chef_info {
+    margin-top: 10px;
+}
+
 .gravatar {
     border-radius: 10px;
+}
+
+span.picture {
+    margin-top: 10px;
+    input {
+        border: 0;
+    }
+}
+
+.show-recipe {
+    margin: 10px;
 }
 
 input, textarea, select, .uneditable-input {
