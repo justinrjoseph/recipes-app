@@ -26,6 +26,14 @@ body {
     color: #fff;
 }
 
+#main-nav-collapse .navbar-nav .dropdown-menu li a {
+    color: #333;
+}
+
+.dropdown-menu {
+    background-color: #fff;
+}
+
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     background-color: rgb(250, 190, 78);
 }

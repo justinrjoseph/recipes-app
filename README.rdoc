@@ -21,6 +21,7 @@ email: string
 - email must be unique
 - email be valid
 
+-------------------------------------------------------------------------------------
 
 Chefs:
 
@@ -37,3 +38,15 @@ What we need to add:
 - ability to chefs to log in and out
 - restrict actions like create/edit recipe and like system to chefs who are logged in
 - restrict edit of recipes to chefs who created them
+
+-------------------------------------------------------------------------------------
+
+Authentication updates:
+
+- show recipe page: ability to edit/update only your recipes
+- navigation partial: toggle menu, restrict new
+- restrict thumbs up and thumbs down to logged in users
+- recipe: update to current_user
+- like: update to current_user
+- before_action: :require_user, except: [:show, :index]
+- before_action: :require_same_user for chefs, only: [:edit, :update]
