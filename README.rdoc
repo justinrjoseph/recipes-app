@@ -50,3 +50,11 @@ Authentication updates:
 - like: update to current_user
 - before_action: :require_user, except: [:show, :index]
 - before_action: :require_same_user for chefs, only: [:edit, :update]
+
+-------------------------------------------------------------------------------------
+
+M2M Associations:
+
+1. We will implement using has_many through: associations
+2. Requires a join table
+3. One object/row in one table can be associated with multiple rows in a second table and vice-versa
