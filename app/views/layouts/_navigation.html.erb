@@ -15,12 +15,40 @@
 
         <div class="collapse navbar-collapse" id="main-nav-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item"><%= link_to "Link 1", "#", class: 'btn btn-warning' %></li>
-            <li class="nav-item"><%= link_to "Link 2", "#", class: 'btn btn-warning' %></li>
+            <!--<li class="nav-item"><//%= link_to "Link 1", "#", class: 'btn btn-warning' %></li>-->
+            <li class="nav-item dropdown">
+              <%= link_to '#', class: 'btn btn-warning dropdown-toggle', 'data-toggle' => 'dropdown' do %>
+                Styles <b class="caret"></b>
+              <% end %>
+              <ul class="dropdown-menu">
+                <% Style.all.each do |style| %>
+                  <li><%= link_to style.name, style_path(style) %></li>
+                <% end %>
+                <% if logged_in? %>
+                  <li class="divider"></li>
+                  <li><%= link_to "New Style", new_style_path %></li>
+                <% end %>
+              </ul>
+            </li>
+            <!--<li class="nav-item"><//%= link_to "Link 2", "#", class: 'btn btn-warning' %></li>-->
+            <li class="nav-item dropdown">
+              <%= link_to '#', class: 'btn btn-warning dropdown-toggle', 'data-toggle' => 'dropdown' do %>
+                Ingredients <b class="caret"></b>
+              <% end %>
+              <ul class="dropdown-menu">
+                <% Ingredient.all.each do |ing| %>
+                  <li><%= link_to ing.name, ingredient_path(ing) %></li>
+                <% end %>
+                <% if logged_in? %>
+                  <li class="divider"></li>
+                  <li><%= link_to "New Ingredient", new_ingredient_path %></li>
+                <% end %>
+              </ul>
+            </li>
             <% if logged_in? %>
               <li class="nav-item"><%= link_to "Create Recipe", new_recipe_path, class: 'btn btn-warning' %></li>
               <li class="nav-item dropdown">
-                <%= link_to '#', class: 'btn btn-primary dropdown-toggle', 'data-toggle' => 'dropdown' do %>
+                <%= link_to '#', class: 'btn btn-success dropdown-toggle', 'data-toggle' => 'dropdown' do %>
                   <%= current_user.chefname %> <b class="caret"></b>
                 <% end %>
                 <ul class="dropdown-menu">
@@ -32,7 +60,7 @@
               </li>
           </ul>
             <% else %>
-              <li class="nav-item"><%= link_to "Log in", login_path, class: 'btn btn-success' %></li>
+              <li class="nav-item"><%= link_to "Sign in", login_path, class: 'btn btn-success' %></li>
             <% end %>
         </div>
       </div>

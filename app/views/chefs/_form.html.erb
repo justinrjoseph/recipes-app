@@ -6,7 +6,7 @@
         <%= form_for @chef do |f| %>
         <div class="form-group">
             <%= f.label :chefname %>
-            <%= f.text_field :chefname, class: 'form-control' %>
+            <%= f.text_field :chefname, options = { autofocus: true, class: 'form-control' } %>
         </div>
         
         <div class="form-group">

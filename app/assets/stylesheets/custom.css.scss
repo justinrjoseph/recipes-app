@@ -34,8 +34,15 @@ body {
     background-color: #fff;
 }
 
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus, {
     background-color: rgb(250, 190, 78);
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    background: #f0ad4e;
 }
 
 .jumbotron {
@@ -93,7 +100,10 @@ span.picture {
     top: -10px;
 }
 
-input, textarea, select, .uneditable-input {
+input,
+textarea,
+select,
+.uneditable-input {
     border: 1px solid #d2d2d2;
     border-radius: 5px;
     margin-bottom: 15px;

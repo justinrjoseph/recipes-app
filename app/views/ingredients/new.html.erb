@@ -1,0 +1,18 @@
+<%= render 'shared/page_title', title: 'Create Recipe Ingredient' %>
+
+<%= render 'shared/errors', obj: @ing %>
+
+<div class="row">
+    
+    <div class="col-md-8 col-md-offset-2 well">
+        <%= form_for @ing do |f| %>
+            <div class="form-group">
+                <%= f.label :name %>
+                <%= f.text_field :name, options = { autofocus: true, class: 'form-control' } %>
+            </div>
+            
+            <%= f.submit 'Create Ingredient', class: 'btn btn-success' %>
+        <% end %>
+    </div>
+    
+</div>

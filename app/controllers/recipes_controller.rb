@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
    before_action :set_recipe, only: [:edit, :update, :show, :like]
-   before_action :require_user, except: [:show, :index]
+   before_action :require_user, except: [:show, :index, :like]
+   before_action :require_user_like, only: [:like]
    before_action :require_same_user, only: [:edit, :update]
    
    def index
@@ -20,7 +21,7 @@ class RecipesController < ApplicationController
       @recipe.chef = current_user
       
       if @recipe.save
-         flash[:success] = "Your Recipe was created!"
+         flash[:success] = "Your \"#{@recipe.name}\" recipe was created!"
          redirect_to recipes_path
       else
          render :new   
@@ -55,7 +56,7 @@ class RecipesController < ApplicationController
    private
    
       def recipe_params
-         params.require(:recipe).permit(:name, :summary, :description, :picture)
+         params.require(:recipe).permit(:name, :summary, :description, :picture, style_ids: [], ingredient_ids: [])
       end
       
       def set_recipe
@@ -67,5 +68,12 @@ class RecipesController < ApplicationController
            flash[:danger] = "You may edit only your recipes."
            redirect_to root_path
          end
+      end
+      
+      def require_user_like
+       if !logged_in?
+         flash[:warning] = "You must be logged in to perform that action."
+         redirect_to :back
+       end
       end
 end
