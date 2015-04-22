@@ -17,9 +17,13 @@
         </div>
         
         <div class="well">
-            <p>Styles: <%= render @recipe.styles %></p>
+            <% if @recipe.styles.any? %>
+                <p>Styles: <%= render @recipe.styles %></p>
+            <% end %>
             <p>Ingredients: <%= render @recipe.ingredients %></p>
-            <p><strong>Steps:</strong></p>
+            <% if @recipe.ingredients.any? %>
+                <p><strong>Steps:</strong></p>
+            <% end %>
             <%= simple_format(@recipe.description) %>
             <div class="likes pull-right">
                 <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
